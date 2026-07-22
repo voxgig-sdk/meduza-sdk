@@ -1,0 +1,109 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Meduza API",
+    "description": "The Meduza API provides access to the latest news and updates from Meduza, an independent media outlet serving Russia and the world. Users can retrieve top stories and articles to keep informed about current events.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://github.com/l0v3m0n3y/meduza"
+    }
+  },
+  "externalDocs": {
+    "description": "API Documentation",
+    "url": "https://github.com/l0v3m0n3y/meduza"
+  },
+  "servers": [
+    {
+      "url": "https://meduza.io/api/w5",
+      "description": "Meduza API Server"
+    }
+  ],
+  "paths": {
+    "/screens/news": {
+      "get": {
+        "summary": "Get News",
+        "description": "Retrieves the latest top news stories and articles from Meduza, an independent media outlet covering Russia and the world.",
+        "operationId": "getNews",
+        "tags": [
+          "News"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved news articles",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "documents": {
+                      "type": "array",
+                      "description": "Array of news articles",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "url": {
+                            "type": "string",
+                            "description": "URL of the article"
+                          },
+                          "title": {
+                            "type": "string",
+                            "description": "Title of the article"
+                          },
+                          "description": {
+                            "type": "string",
+                            "description": "Brief description of the article"
+                          },
+                          "pub_date": {
+                            "type": "string",
+                            "format": "date-time",
+                            "description": "Publication date of the article"
+                          },
+                          "image": {
+                            "type": "object",
+                            "description": "Article image information",
+                            "properties": {
+                              "url": {
+                                "type": "string",
+                                "description": "Image URL"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "collection": {
+                      "type": "object",
+                      "description": "Collection metadata"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "News",
+      "description": "Operations related to retrieving news articles and stories"
+    }
+  ]
+}

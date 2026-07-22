@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        url: "https://github.com/l0v3m0n3y/meduza"
+      }
+      description: "The Meduza API provides access to the latest news and updates from Meduza, an independent media outlet serving Russia and the world. Users can retrieve top stories and articles to keep informed about current events."
+      servers: [
+        {
+          description: "Meduza API Server"
+          url: "https://meduza.io/api/w5"
+        }
+      ]
+      summary: "The Meduza API provides access to the latest news and updates from Meduza, an independent media outlet serving Russia and the world."
+      title: "Meduza API"
+      version: "1.0.0"
+      website: "https://github.com/l0v3m0n3y/meduza"
+    }
+  }
+}
+

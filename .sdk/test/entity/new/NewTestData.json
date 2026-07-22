@@ -1,0 +1,38 @@
+{
+  "existing": {
+    "new": {
+      "NEW00": {
+        "description": "s32",
+        "image": {},
+        "pub_date": "s34",
+        "title": "s35",
+        "url": "s36"
+      },
+      "NEW01": {
+        "description": "s64",
+        "image": {},
+        "pub_date": "s66",
+        "title": "s67",
+        "url": "s68"
+      },
+      "NEW02": {
+        "description": "s96",
+        "image": {},
+        "pub_date": "s98",
+        "title": "s99",
+        "url": "s9a"
+      }
+    }
+  },
+  "new": {
+    "new": {
+      "new_ref01": {
+        "description": "sc8",
+        "image": {},
+        "pub_date": "sca",
+        "title": "scb",
+        "url": "scc"
+      }
+    }
+  }
+}
