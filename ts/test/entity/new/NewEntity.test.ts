@@ -63,7 +63,7 @@ describe('NewEntity', async () => {
     const new_ref01_ent = client.New()
     const new_ref01_match: any = {}
 
-    const new_ref01_list = await new_ref01_ent.list(new_ref01_match)
+    const new_ref01_list = (await new_ref01_ent.list(new_ref01_match)).map((e: any) => e.data())
 
 
   })

@@ -35,7 +35,9 @@ const client = new MeduzaSDK()
 
 ### 2. List new records
 
-`list()` resolves to an array of New objects — iterate it directly:
+`list()` resolves to an array of New ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const new_s = await client.New().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = MeduzaSDK.test()
 
 const new_ = await client.New().list()
-// new_ is a bare entity populated with mock response data
+// new_ is the entity, populated with mock response data
+// — call new_.data() for the record itself
 console.log(new_)
 ```
 

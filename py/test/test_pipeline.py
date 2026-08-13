@@ -16,11 +16,11 @@
 import pytest
 
 from meduza_sdk import MeduzaSDK
-from core.error import MeduzaError
-from core.result import MeduzaResult
-from core.response import MeduzaResponse
-from core.spec import MeduzaSpec
-from feature.base_feature import MeduzaBaseFeature
+from meduza_sdk.core.error import MeduzaError
+from meduza_sdk.core.result import MeduzaResult
+from meduza_sdk.core.response import MeduzaResponse
+from meduza_sdk.core.spec import MeduzaSpec
+from meduza_sdk.feature.base_feature import MeduzaBaseFeature
 
 
 def _client():

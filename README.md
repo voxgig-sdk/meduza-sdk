@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = MeduzaSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = MeduzaSDK.test({
+  entity: {
+    new: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const new_s = await client.New().list()
-// new_s is an array of bare New records populated with mock data
+// new_s is an array of New entities, populated with mock data
+// — call new_s[0].data() for the record itself
 console.log(new_s)
 ```
 
@@ -110,7 +119,7 @@ import { MeduzaSDK } from '@voxgig-sdk/meduza'
 
 const client = new MeduzaSDK()
 
-// List all news (returns New[])
+// List all news (returns NewEntity[] — .data() for the record)
 const new_s = await client.New().list()
 for (const new_ of new_s) {
   console.log(new_)
@@ -343,6 +352,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://github.com/l0v3m0n3y/meduza](https://github.com/l0v3m0n3y/meduza)
 

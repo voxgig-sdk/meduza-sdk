@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import MeduzaControl
-from core.error import MeduzaError
-from core.result import MeduzaResult
-from core.spec import MeduzaSpec
+from meduza_sdk.config import make_config
+from meduza_sdk.features import _make_feature
+from meduza_sdk.core.control import MeduzaControl
+from meduza_sdk.core.error import MeduzaError
+from meduza_sdk.core.result import MeduzaResult
+from meduza_sdk.core.spec import MeduzaSpec
 
 
 # True when this SDK was generated with the named feature.

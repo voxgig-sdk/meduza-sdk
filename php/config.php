@@ -75,6 +75,7 @@ class MeduzaConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/screens/news',
                   'parts' => [

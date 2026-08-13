@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from meduza_sdk.utility.voxgig_struct import voxgig_struct as vs
 from meduza_sdk import MeduzaSDK
-from core import helpers
+from meduza_sdk.core import helpers
 from test import runner
 
 
