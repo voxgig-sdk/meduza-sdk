@@ -40,7 +40,7 @@ class MeduzaSDK
         $utility = new MeduzaUtility();
         $this->_utility = $utility;
 
-        $config = MeduzaConfig::make_config();
+        $config = MeduzaConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

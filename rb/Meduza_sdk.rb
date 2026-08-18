@@ -28,7 +28,7 @@ class MeduzaSDK
     utility = MeduzaUtility.new
     @_utility = utility
 
-    config = MeduzaConfig.make_config
+    config = MeduzaConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

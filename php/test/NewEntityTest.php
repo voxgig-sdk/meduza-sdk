@@ -40,7 +40,7 @@ class NewEntityTest extends TestCase
         $this->assertCount(3, $seen);
 
         // Inbound: streaming active -> yields each item from the feature.
-        $cfg = MeduzaConfig::make_config();
+        $cfg = MeduzaConfig::shared_config();
         if (isset($cfg["feature"]) && is_array($cfg["feature"]) && isset($cfg["feature"]["streaming"])) {
             $sdk = MeduzaSDK::test($seed, ["feature" => ["streaming" => ["active" => true]]]);
             $got = [];

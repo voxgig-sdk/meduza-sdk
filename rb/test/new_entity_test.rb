@@ -33,7 +33,7 @@ class NewEntityTest < Minitest::Test
     assert_equal 3, seen.length
 
     # Inbound: streaming active -> yields each item from the feature.
-    cfg = MeduzaConfig.make_config
+    cfg = MeduzaConfig.shared_config
     if cfg["feature"].is_a?(Hash) && cfg["feature"].key?("streaming")
       sdk = MeduzaSDK.test(seed, { "feature" => { "streaming" => { "active" => true } } })
       got = []
