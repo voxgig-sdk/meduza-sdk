@@ -36,30 +36,35 @@
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Brief description of the article",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "image",
               "req": false,
+              "short": "Article image information",
               "type": "`$OBJECT`"
             },
             {
               "active": true,
               "name": "pub_date",
               "req": false,
+              "short": "Publication date of the article",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "title",
               "req": false,
+              "short": "Title of the article",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "url",
               "req": false,
+              "short": "URL of the article",
               "type": "`$STRING`"
             }
           ],

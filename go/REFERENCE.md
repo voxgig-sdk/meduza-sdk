@@ -98,11 +98,11 @@ fmt.Println(new.GetName()) // "new"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `string` | No |  |
-| `image` | `map[string]any` | No |  |
-| `pub_date` | `string` | No |  |
-| `title` | `string` | No |  |
-| `url` | `string` | No |  |
+| `description` | `string` | No | Brief description of the article |
+| `image` | `map[string]any` | No | Article image information |
+| `pub_date` | `string` | No | Publication date of the article |
+| `title` | `string` | No | Title of the article |
+| `url` | `string` | No | URL of the article |
 
 ### Operations
 

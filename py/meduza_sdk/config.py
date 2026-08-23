@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "Meduza",
+            "slug": "meduza",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -50,22 +53,27 @@ def make_config():
         "fields": [
           {
             "name": "description",
+            "short": "Brief description of the article",
             "type": "`$STRING`",
           },
           {
             "name": "image",
+            "short": "Article image information",
             "type": "`$OBJECT`",
           },
           {
             "name": "pub_date",
+            "short": "Publication date of the article",
             "type": "`$STRING`",
           },
           {
             "name": "title",
+            "short": "Title of the article",
             "type": "`$STRING`",
           },
           {
             "name": "url",
+            "short": "URL of the article",
             "type": "`$STRING`",
           },
         ],

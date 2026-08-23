@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'Meduza',
+        slug: "meduza",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -56,22 +67,27 @@ class Config {
       "fields": [
         {
           "name": "description",
+          "short": "Brief description of the article",
           "type": "`$STRING`"
         },
         {
           "name": "image",
+          "short": "Article image information",
           "type": "`$OBJECT`"
         },
         {
           "name": "pub_date",
+          "short": "Publication date of the article",
           "type": "`$STRING`"
         },
         {
           "name": "title",
+          "short": "Title of the article",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "URL of the article",
           "type": "`$STRING`"
         }
       ],

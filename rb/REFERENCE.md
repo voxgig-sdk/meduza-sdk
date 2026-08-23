@@ -93,11 +93,11 @@ new = client.New
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `String` | No |  |
-| `image` | `Hash` | No |  |
-| `pub_date` | `String` | No |  |
-| `title` | `String` | No |  |
-| `url` | `String` | No |  |
+| `description` | `String` | No | Brief description of the article |
+| `image` | `Hash` | No | Article image information |
+| `pub_date` | `String` | No | Publication date of the article |
+| `title` | `String` | No | Title of the article |
+| `url` | `String` | No | URL of the article |
 
 ### Operations
 

@@ -6,7 +6,7 @@ The Golang SDK for the Meduza API — an entity-oriented client using standard G
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.New(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -260,11 +260,11 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"description"` |  |
-| `"image"` |  |
-| `"pub_date"` |  |
-| `"title"` |  |
-| `"url"` |  |
+| `"description"` | Brief description of the article |
+| `"image"` | Article image information |
+| `"pub_date"` | Publication date of the article |
+| `"title"` | Title of the article |
+| `"url"` | URL of the article |
 
 Operations: List.
 
@@ -289,11 +289,11 @@ Create an instance: `new := client.New(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `image` | `map[string]any` |  |
-| `pub_date` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `description` | `string` | Brief description of the article |
+| `image` | `map[string]any` | Article image information |
+| `pub_date` | `string` | Publication date of the article |
+| `title` | `string` | Title of the article |
+| `url` | `string` | URL of the article |
 
 #### Example: List
 

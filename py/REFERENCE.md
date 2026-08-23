@@ -87,11 +87,11 @@ new = client.New()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `description` | `str` | No |  |
-| `image` | `dict` | No |  |
-| `pub_date` | `str` | No |  |
-| `title` | `str` | No |  |
-| `url` | `str` | No |  |
+| `description` | `str` | No | Brief description of the article |
+| `image` | `dict` | No | Article image information |
+| `pub_date` | `str` | No | Publication date of the article |
+| `title` | `str` | No | Title of the article |
+| `url` | `str` | No | URL of the article |
 
 ### Operations
 

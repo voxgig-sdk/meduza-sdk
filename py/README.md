@@ -243,11 +243,11 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `image` |  |
-| `pub_date` |  |
-| `title` |  |
-| `url` |  |
+| `description` | Brief description of the article |
+| `image` | Article image information |
+| `pub_date` | Publication date of the article |
+| `title` | Title of the article |
+| `url` | URL of the article |
 
 Operations: List.
 
@@ -272,11 +272,11 @@ Create an instance: `new = client.New()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `str` |  |
-| `image` | `dict` |  |
-| `pub_date` | `str` |  |
-| `title` | `str` |  |
-| `url` | `str` |  |
+| `description` | `str` | Brief description of the article |
+| `image` | `dict` | Article image information |
+| `pub_date` | `str` | Publication date of the article |
+| `title` | `str` | Title of the article |
+| `url` | `str` | URL of the article |
 
 #### Example: List
 

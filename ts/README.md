@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -287,11 +287,11 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `image` |  |
-| `pub_date` |  |
-| `title` |  |
-| `url` |  |
+| `description` | Brief description of the article |
+| `image` | Article image information |
+| `pub_date` | Publication date of the article |
+| `title` | Title of the article |
+| `url` | URL of the article |
 
 Operations: list.
 
@@ -316,11 +316,11 @@ Create an instance: `const new_ = client.New()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `image` | `Record<string, any>` |  |
-| `pub_date` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `description` | `string` | Brief description of the article |
+| `image` | `Record<string, any>` | Article image information |
+| `pub_date` | `string` | Publication date of the article |
+| `title` | `string` | Title of the article |
+| `url` | `string` | URL of the article |
 
 #### Example: List
 

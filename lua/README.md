@@ -231,11 +231,11 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `description` |  |
-| `image` |  |
-| `pub_date` |  |
-| `title` |  |
-| `url` |  |
+| `description` | Brief description of the article |
+| `image` | Article image information |
+| `pub_date` | Publication date of the article |
+| `title` | Title of the article |
+| `url` | URL of the article |
 
 Operations: List.
 
@@ -260,11 +260,11 @@ Create an instance: `local new = client:New(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `description` | `string` |  |
-| `image` | `table` |  |
-| `pub_date` | `string` |  |
-| `title` | `string` |  |
-| `url` | `string` |  |
+| `description` | `string` | Brief description of the article |
+| `image` | `table` | Article image information |
+| `pub_date` | `string` | Publication date of the article |
+| `title` | `string` | Title of the article |
+| `url` | `string` | URL of the article |
 
 #### Example: List
 
