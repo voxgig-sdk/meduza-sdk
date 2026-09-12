@@ -68,6 +68,7 @@ class MeduzaConfig
               'type' => '`$OBJECT`',
             ],
             [
+              'format' => 'date-time',
               'name' => 'pub_date',
               'short' => 'Publication date of the article',
               'type' => '`$STRING`',
@@ -94,14 +95,22 @@ class MeduzaConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/screens/news',
-                  'parts' => [
-                    'screens',
-                    'news',
+                  'segments' => [
+                    [
+                      'lit' => 'screens',
+                    ],
+                    [
+                      'lit' => 'news',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'screens',
+                    'news',
                   ],
                 ],
               ],

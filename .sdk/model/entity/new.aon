@@ -18,6 +18,7 @@ main: kit: entity: new: {
       type: "`$OBJECT`"
     }
     {
+      format: "date-time"
       name: "pub_date"
       req: false
       short: "Publication date of the article"
@@ -45,9 +46,13 @@ main: kit: entity: new: {
         {
           method: "GET"
           orig: "/screens/news"
-          parts: [
-            "screens"
-            "news"
+          segments: [
+            {
+              lit: "screens"
+            }
+            {
+              lit: "news"
+            }
           ]
           transform: {
             req: "`reqdata`"

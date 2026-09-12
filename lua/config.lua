@@ -42,6 +42,7 @@ local function make_config()
             ["type"] = "`$OBJECT`",
           },
           {
+            ["format"] = "date-time",
             ["name"] = "pub_date",
             ["short"] = "Publication date of the article",
             ["type"] = "`$STRING`",
@@ -68,14 +69,22 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/screens/news",
-                ["parts"] = {
-                  "screens",
-                  "news",
+                ["segments"] = {
+                  {
+                    ["lit"] = "screens",
+                  },
+                  {
+                    ["lit"] = "news",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "screens",
+                  "news",
                 },
               },
             },
