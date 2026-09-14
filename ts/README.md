@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { MeduzaSDK } from '@voxgig-sdk/meduza'
+import { MeduzaSDK } from '@voxgig-sdk/meduza-sdk'
 
 const client = new MeduzaSDK()
 ```
@@ -411,7 +411,7 @@ meduza/
 Import the SDK from the package root:
 
 ```ts
-import { MeduzaSDK } from '@voxgig-sdk/meduza'
+import { MeduzaSDK } from '@voxgig-sdk/meduza-sdk'
 ```
 
 ### Entity state

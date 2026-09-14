@@ -105,7 +105,7 @@ local results, err = client:New():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/meduza` | publish pending — [install from git tag](https://github.com/voxgig-sdk/meduza-sdk/releases) |
+| TypeScript | `@voxgig-sdk/meduza-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/meduza-sdk/releases) |
 | Python | `voxgig-sdk-meduza` | publish pending — [install from git tag](https://github.com/voxgig-sdk/meduza-sdk/releases) |
 | PHP | `voxgig-sdk/meduza` | publish pending — [install from git tag](https://github.com/voxgig-sdk/meduza-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/meduza-sdk/go` | `go get github.com/voxgig-sdk/meduza-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:New():list()
 ### TypeScript
 
 ```ts
-import { MeduzaSDK } from '@voxgig-sdk/meduza'
+import { MeduzaSDK } from '@voxgig-sdk/meduza-sdk'
 
 const client = new MeduzaSDK()
 
