@@ -4,7 +4,10 @@ declare(strict_types=1);
 // Meduza SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class MeduzaFeatures
@@ -14,8 +17,14 @@ class MeduzaFeatures
         switch ($name) {
             case "base":
                 return new MeduzaBaseFeature();
+            case "ratelimit":
+                return new MeduzaRatelimitFeature();
+            case "retry":
+                return new MeduzaRetryFeature();
             case "test":
                 return new MeduzaTestFeature();
+            case "timeout":
+                return new MeduzaTimeoutFeature();
             default:
                 return new MeduzaBaseFeature();
         }
@@ -31,7 +40,10 @@ class MeduzaFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

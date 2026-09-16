@@ -44,6 +44,12 @@ main: kit: entity: new: {
       name: "list"
       points: [
         {
+          contract: {
+            id: "GET /screens/news"
+            json: "{\"operationId\":\"getNews\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"collection\":{\"description\":\"Collection metadata\",\"type\":\"object\"},\"documents\":{\"description\":\"Array of news articles\",\"items\":{\"properties\":{\"description\":{\"description\":\"Brief description of the article\",\"type\":\"string\"},\"image\":{\"description\":\"Article image information\",\"properties\":{\"url\":{\"description\":\"Image URL\",\"type\":\"string\"}},\"type\":\"object\"},\"pub_date\":{\"description\":\"Publication date of the article\",\"format\":\"date-time\",\"type\":\"string\"},\"title\":{\"description\":\"Title of the article\",\"type\":\"string\"},\"url\":{\"description\":\"URL of the article\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successfully retrieved news articles\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/screens/news"
           segments: [
