@@ -105,12 +105,12 @@ local results, err = client:New():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/meduza-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/meduza-sdk/releases) |
-| Python | `voxgig-sdk-meduza` | publish pending — [install from git tag](https://github.com/voxgig-sdk/meduza-sdk/releases) |
-| PHP | `voxgig-sdk/meduza` | publish pending — [install from git tag](https://github.com/voxgig-sdk/meduza-sdk/releases) |
+| TypeScript | `@voxgig-sdk/meduza-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/meduza-sdk/tags) |
+| Python | `voxgig-sdk-meduza` | publish pending — [install from git tag](https://github.com/voxgig-sdk/meduza-sdk/tags) |
+| PHP | `voxgig-sdk/meduza` | publish pending — [install from git tag](https://github.com/voxgig-sdk/meduza-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/meduza-sdk/go` | `go get github.com/voxgig-sdk/meduza-sdk/go@latest` |
-| Ruby | `voxgig-sdk-meduza` | publish pending — [install from git tag](https://github.com/voxgig-sdk/meduza-sdk/releases) |
-| Lua | `voxgig-sdk-meduza` | publish pending — [install from git tag](https://github.com/voxgig-sdk/meduza-sdk/releases) |
+| Ruby | `voxgig-sdk-meduza` | publish pending — [install from git tag](https://github.com/voxgig-sdk/meduza-sdk/tags) |
+| Lua | `voxgig-sdk-meduza` | publish pending — [install from git tag](https://github.com/voxgig-sdk/meduza-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/meduza-sdk/go-cli` | `go install github.com/voxgig-sdk/meduza-sdk/go-cli/cmd/meduza@latest` |
 | Go MCP server | `github.com/voxgig-sdk/meduza-sdk/go-mcp` | `go get github.com/voxgig-sdk/meduza-sdk/go-mcp@latest` |
 
