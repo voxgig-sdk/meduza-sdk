@@ -1,0 +1,78 @@
+# Entity: new
+
+main: kit: entity: new: {
+
+  alias: field: {}
+
+  fields: {
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "Brief description of the article"
+      t: "`$STRING`"
+    }
+    image: {
+      h: "Image"
+      n: "image"
+      r: false
+      sh: "Article image information"
+      t: "`$OBJECT`"
+    }
+    pub_date: {
+      fo: "date-time"
+      h: "Pub Date"
+      n: "pub_date"
+      r: false
+      sh: "Publication date of the article"
+      t: "`$STRING`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: false
+      sh: "Title of the article"
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "URL of the article"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "new"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /screens/news"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/screens/news"
+          s: [
+            {
+              lit: "screens"
+            }
+            {
+              lit: "news"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

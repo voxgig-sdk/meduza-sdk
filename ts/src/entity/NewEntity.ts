@@ -19,7 +19,6 @@ import type {
   NewListMatch,
 } from '../MeduzaTypes'
 
-// TODO: needs Entity superclass
 class NewEntity extends MeduzaEntityBase<New> {
 
   constructor(client: MeduzaSDK, entopts: any) {

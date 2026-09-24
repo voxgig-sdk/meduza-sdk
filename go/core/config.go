@@ -91,29 +91,34 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "description",
-						"short": "Brief description of the article",
+						"title": "Description",
 						"type": "`$STRING`",
+						"short": "Brief description of the article",
 					},
 					map[string]any{
 						"name": "image",
-						"short": "Article image information",
+						"title": "Image",
 						"type": "`$OBJECT`",
+						"short": "Article image information",
 					},
 					map[string]any{
-						"format": "date-time",
 						"name": "pub_date",
-						"short": "Publication date of the article",
+						"title": "Pub Date",
 						"type": "`$STRING`",
+						"short": "Publication date of the article",
+						"format": "date-time",
 					},
 					map[string]any{
 						"name": "title",
-						"short": "Title of the article",
+						"title": "Title",
 						"type": "`$STRING`",
+						"short": "Title of the article",
 					},
 					map[string]any{
 						"name": "url",
-						"short": "URL of the article",
+						"title": "Url",
 						"type": "`$STRING`",
+						"short": "URL of the article",
 					},
 				},
 				"name": "new",
@@ -123,7 +128,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/screens/news",
@@ -135,15 +139,17 @@ func MakeConfig() map[string]any {
 										"lit": "news",
 									},
 								},
-								"select": map[string]any{},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
 								"parts": []any{
 									"screens",
 									"news",
 								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},

@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewEntity = void 0;
 const MeduzaEntityBase_1 = require("../MeduzaEntityBase");
-// TODO: needs Entity superclass
 class NewEntity extends MeduzaEntityBase_1.MeduzaEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

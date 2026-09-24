@@ -99,29 +99,34 @@ module MeduzaConfig
           "fields" => [
             {
               "name" => "description",
-              "short" => "Brief description of the article",
+              "title" => "Description",
               "type" => "`$STRING`",
+              "short" => "Brief description of the article",
             },
             {
               "name" => "image",
-              "short" => "Article image information",
+              "title" => "Image",
               "type" => "`$OBJECT`",
+              "short" => "Article image information",
             },
             {
-              "format" => "date-time",
               "name" => "pub_date",
-              "short" => "Publication date of the article",
+              "title" => "Pub Date",
               "type" => "`$STRING`",
+              "short" => "Publication date of the article",
+              "format" => "date-time",
             },
             {
               "name" => "title",
-              "short" => "Title of the article",
+              "title" => "Title",
               "type" => "`$STRING`",
+              "short" => "Title of the article",
             },
             {
               "name" => "url",
-              "short" => "URL of the article",
+              "title" => "Url",
               "type" => "`$STRING`",
+              "short" => "URL of the article",
             },
           ],
           "name" => "new",
@@ -131,7 +136,6 @@ module MeduzaConfig
               "name" => "list",
               "points" => [
                 {
-                  "args" => {},
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/screens/news",
@@ -143,15 +147,17 @@ module MeduzaConfig
                       "lit" => "news",
                     },
                   ],
-                  "select" => {},
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
                   "parts" => [
                     "screens",
                     "news",
                   ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {},
+                  "select" => {},
                 },
               ],
             },
