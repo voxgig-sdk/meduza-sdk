@@ -146,7 +146,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.documents`",
 								},
 								"args": map[string]any{},
 								"select": map[string]any{},

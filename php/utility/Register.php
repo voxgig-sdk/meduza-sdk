@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 MeduzaUtility::setRegistrar(function (MeduzaUtility $u): void {
     $u->clean = [MeduzaClean::class, 'call'];
+    $u->clean_add = [MeduzaClean::class, 'add'];
+    $u->clean_explain = [MeduzaDone::class, 'clean_explain'];
     $u->done = [MeduzaDone::class, 'call'];
     $u->make_error = [MeduzaMakeError::class, 'call'];
     $u->feature_add = [MeduzaFeatureAdd::class, 'call'];

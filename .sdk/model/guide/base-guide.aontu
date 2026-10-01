@@ -11,6 +11,7 @@ guide: {
   entity: new: {
     path: "/screens/news": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.documents`")|top
     }
   }
 

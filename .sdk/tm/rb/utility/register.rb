@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 MeduzaUtility.registrar = ->(u) {
   u.clean = MeduzaUtilities::Clean
+  u.clean_add = MeduzaUtilities::CleanAdd
+  u.clean_explain = MeduzaUtilities::CleanExplain
   u.done = MeduzaUtilities::Done
   u.make_error = MeduzaUtilities::MakeError
   u.feature_add = MeduzaUtilities::FeatureAdd

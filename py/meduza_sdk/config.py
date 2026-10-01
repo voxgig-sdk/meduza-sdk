@@ -171,7 +171,7 @@ def make_config():
                 "rename": {},
                 "transform": {
                   "req": "`reqdata`",
-                  "res": "`body`",
+                  "res": "`body.documents`",
                 },
                 "args": {},
                 "select": {},
