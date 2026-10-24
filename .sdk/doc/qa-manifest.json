@@ -3,5 +3,17 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Article image information",
+      "Brief description of the article",
+      "Meduza API Server",
+      "Publication date of the article",
+      "Successfully retrieved news articles",
+      "The Meduza API provides access to the latest news and updates from Meduza, an independent media outlet serving Russia and the world. Users can retrieve top stories and articles to keep informed about current events.",
+      "Title of the article",
+      "URL of the article"
+    ]
+  }
 }

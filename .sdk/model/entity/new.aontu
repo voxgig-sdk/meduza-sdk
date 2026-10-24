@@ -56,6 +56,10 @@ main: kit: entity: new: {
           }
           m: "GET"
           o: "/screens/news"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "screens"

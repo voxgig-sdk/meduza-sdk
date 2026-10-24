@@ -17,19 +17,24 @@ const PLAN: any[] = [
     "args": [],
     "select": {},
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
     "query": [],
+    "queryArgs": [],
     "auth": null,
     "status": 200,
     "sample": {
       "documents": [
         {
+          "url": "x",
+          "title": "x",
           "description": "x",
+          "pub_date": "2026-01-01T00:00:00Z",
           "image": {
             "url": "x"
-          },
-          "pub_date": "2026-01-01T00:00:00Z",
-          "title": "x",
-          "url": "x"
+          }
         }
       ],
       "collection": {}

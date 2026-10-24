@@ -9,7 +9,7 @@ import { createLiveTransport } from '../../live-runner'
 import { runLiveEntity } from '../../live-entity'
 
 
-import { MeduzaSDK, BaseFeature, stdutil } from '../../..'
+import { MeduzaSDK, BaseFeature, config, stdutil } from '../../..'
 
 import {
   envOverride,
@@ -41,6 +41,64 @@ describe('NewEntity', async () => {
   })
 
 
+  class FailHook extends BaseFeature {
+    name = 'failhook'
+    version = '0.0.1'
+    active = true
+    unexpected = 0
+    init() { }
+    PreSpec() { throw new Error('new hook failed') }
+    PreUnexpected() { this.unexpected++ }
+  }
+
+  test('stream-error', async () => {
+    const offline = { net: { offline: true } }
+    await assert.rejects(async () => {
+      for await (const _item of MeduzaSDK.test(offline).New().stream('list')) { }
+    }, /offline/)
+
+    for await (const _item of MeduzaSDK.test(offline).New()
+      .stream('list', undefined, { ctrl: { throw: false } })) { }
+
+    if (null != (config as any).feature?.rbac) {
+      const denied = MeduzaSDK.test(undefined, { feature: { rbac: { active: true, deny: true } } })
+      await assert.rejects(async () => {
+        for await (const _item of denied.New().stream('list')) { }
+      }, (err: any) => 'rbac_denied' === err.code)
+    }
+  })
+
+  test('stream-ctrl', async () => {
+    const explain: any = {}
+    const ctrl: any = { explain }
+    for await (const _item of MeduzaSDK.test().New().stream('list', undefined, { ctrl })) { }
+    assert.deepStrictEqual(Object.keys(ctrl), ['explain'])
+    assert(explain === ctrl.explain && 0 < Object.keys(explain).length)
+  })
+
+  test('unexpected', async () => {
+    const hook = new FailHook()
+    const client = new MeduzaSDK({ feature: { test: { active: true } }, extend: [hook] })
+    await assert.rejects(client.New().list(), /hook failed/)
+    assert(0 < hook.unexpected)
+
+    const fired = hook.unexpected
+    assert.strictEqual(await client.New().list(undefined, { throw: false }), undefined)
+    assert(fired < hook.unexpected)
+  })
+
+  test('validate', async (t) => {
+    if (null == (config as any).feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = MeduzaSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.New().list({"description":1} as any),
+      (err: any) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.MEDUZA_TEST_LIVE
@@ -51,7 +109,7 @@ describe('NewEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"description":{"a":true,"h":"Description","n":"description","r":false,"sh":"Brief description of the article","t":"`$STRING`","key$":"description","index$":0},"image":{"a":true,"h":"Image","n":"image","r":false,"sh":"Article image information","t":"`$OBJECT`","key$":"image","index$":1},"pub_date":{"a":true,"fo":"date-time","h":"Pub Date","n":"pub_date","r":false,"sh":"Publication date of the article","t":"`$STRING`","key$":"pub_date","index$":2},"title":{"a":true,"h":"Title","n":"title","r":false,"sh":"Title of the article","t":"`$STRING`","key$":"title","index$":3},"url":{"a":true,"h":"Url","n":"url","r":false,"sh":"URL of the article","t":"`$STRING`","key$":"url","index$":4}},"name":"new","op":{"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /screens/news","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/screens/news","q":{},"r":{},"s":[{"lit":"screens"},{"lit":"news"}],"t":{"req":"`reqdata`","res":"`body.documents`"},"index$":0}],"key$":"list"}},"relations":{"ancestors":[]},"key$":"new","name__orig":"new","Name":"New","name_":"new","name-":"new","NAME":"NEW","index$":0}, {"active":true,"entity":"new","key$":"BasicNewFlow","kind":"basic","name":"BasicNewFlow","param":{},"step":[{"a":true,"d":{},"i":{},"m":{},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"new_ref01"}}],"index$":0}]}, 'New', {"GET /screens/news":{"protocol":"http","parameters":[]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"description":{"a":true,"h":"Description","n":"description","r":false,"sh":"Brief description of the article","t":"`$STRING`","key$":"description","index$":0},"image":{"a":true,"h":"Image","n":"image","r":false,"sh":"Article image information","t":"`$OBJECT`","key$":"image","index$":1},"pub_date":{"a":true,"fo":"date-time","h":"Pub Date","n":"pub_date","r":false,"sh":"Publication date of the article","t":"`$STRING`","key$":"pub_date","index$":2},"title":{"a":true,"h":"Title","n":"title","r":false,"sh":"Title of the article","t":"`$STRING`","key$":"title","index$":3},"url":{"a":true,"h":"Url","n":"url","r":false,"sh":"URL of the article","t":"`$STRING`","key$":"url","index$":4}},"name":"new","op":{"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /screens/news","source":"openapi3","version":2},"g":{},"k":"http","m":"GET","o":"/screens/news","q":{},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"screens"},{"lit":"news"}],"t":{"req":"`reqdata`","res":"`body.documents`"},"index$":0}],"key$":"list"}},"relations":{"ancestors":[]},"key$":"new","name__orig":"new","Name":"New","name_":"new","name-":"new","NAME":"NEW","index$":0}, {"active":true,"entity":"new","key$":"BasicNewFlow","kind":"basic","name":"BasicNewFlow","param":{},"step":[{"a":true,"d":{},"i":{},"m":{},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"new_ref01"}}],"index$":0}]}, 'New', {"GET /screens/news":{"protocol":"http","parameters":[]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -72,6 +130,12 @@ describe('NewEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra?: any) {
   // TODO: fix test def options

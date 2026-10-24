@@ -18,6 +18,7 @@ function MeduzaError.new(code, msg, ctx)
   self.msg = msg or ""
   self.result = nil
   self.spec = nil
+  self.status = -1
   CONTEXT[self] = ctx
   return self
 end
@@ -30,6 +31,11 @@ end
 
 function MeduzaError:error()
   return self.msg
+end
+
+
+function MeduzaError:not_found()
+  return 404 == self.status
 end
 
 
